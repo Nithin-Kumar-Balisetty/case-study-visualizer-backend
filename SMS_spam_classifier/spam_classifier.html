@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Mining and Data Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .example {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .code-block {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Data Types and Text Mining</h2>
+
+    <div class="section">
+        <h3>Data</h3>
+        <p>Data refers to raw facts, figures, or information collected for analysis, processing, or reference. It can exist in various forms, including text, images, audio, or numerical values.</p>
+        
+        <p><strong>Example:</strong> The below data illustrates the monthly retail store sales trend in USA.</p>
+        
+        <p><strong>Image:</strong> Monthly Retail Store Sales Trend in USA</p>
+
+        <div class="example">
+            <strong>Customer Review Example (Unstructured Data):</strong>
+            <p><em>"I SAVED SO MUCH WITH BEST BUY! THANK YOU!..."</em></p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Structured Data</h3>
+        <p>Structured data refers to information that is systematically organized in a predefined format, typically in rows and columns. This format ensures ease of storage, searchability, and analysis.</p>
+        
+        <p><strong>Example:</strong> The Boston.csv dataset, which contains structured tabular data used for housing price analysis.</p>
+        
+        <div class="code-block">
+            <pre>
+# Boston.csv Data Example:
+1, 2.31, 12.5, 6.575, 0.00632, 65.2, 0.538, 396.9, 15.3
+2, 7.07, 12.5, 6.421, 0.02731, 78.9, 0.469, 242.0, 17.8
+3, 7.07, 12.5, 7.185, 0.02729, 61.1, 0.469, 242.0, 17.8
+            </pre>
+        </div>
+        
+        <div class="example">
+            <strong>Structured Data Example (Employee Database):</strong>
+            <p>Example: An employee database with fields like <strong>id</strong>, <strong>name</strong>, <strong>month_of_birth</strong>, and <strong>address</strong> stored in a relational database.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Unstructured Data</h3>
+        <p>Unstructured data is information that doesn’t have a predefined format or organized structure. Examples include customer reviews, tweets, social media texts with hashtags, etc.</p>
+        
+        <p><strong>Example:</strong> A free-form email with no formal structure:</p>
+        
+        <div class="example">
+            <p><em>Just checking in, how's everything going with the project? I'm a bit behind on some tasks, but I'll catch up soon...</em></p>
+        </div>
+
+        <p>Example of a photo without metadata:</p>
+        <p><strong>Image:</strong> Mountain Sunrise</p>
+    </div>
+
+    <div class="section">
+        <h3>Text Mining</h3>
+        <p>Text mining is a part of data mining that focuses on analyzing unstructured text data. It uses natural language processing (NLP) to extract useful information and insights from large text datasets.</p>
+        
+        <h4>SMS Spam Classification Example:</h4>
+        <p><strong>Spam Message:</strong> "Congratulations! You've won a $1,000 gift card! Click here to claim your gift card."</p>
+        
+        <p><strong>Image:</strong> Word Cloud Example</p>
+        
+        <p><strong>Frequency Bar Chart:</strong></p>
+        <p><strong>Image:</strong> Frequency Bar Chart Example</p>
+        
+        <div class="example">
+            <p>Words like <strong>congratulations</strong>, <strong>gift</strong>, and <strong>claim</strong> are common in spam messages.</p>
+        </div>
+        
+        <h4>Ham Message Example:</h4>
+        <p><strong>Ham Message:</strong> "Welcome to our monthly newsletter! Here are some updates on our latest products."</p>
+        
+        <p><strong>Image:</strong> Ham Word Cloud</p>
+        
+        <p>Words like <strong>products</strong>, <strong>monthly</strong>, and <strong>newsletter</strong> are common in ham messages.</p>
+    </div>
+</div>
+
+</body>
+</html>
