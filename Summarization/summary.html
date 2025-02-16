@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarization Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .summary-section {
+            margin-bottom: 30px;
+        }
+        .summary-box {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .example-box {
+            background-color: #dfe6e9;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .similarity-score {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Automatic Text Summarization in NLP</h1>
+        <p>Automatic text summarization in NLP condenses long texts while preserving key information. Though less discussed than other ML advancements, it continues to improve, aiding industries like banking, law, and healthcare. There are two main types: Extractive and Abstractive Summarization.</p>
+
+        <div class="summary-section">
+            <h2>Extractive Summarization</h2>
+            <p>Extractive summarization is a natural language processing technique that involves selecting and extracting key sentences or phrases from a text to create a concise summary. It focuses on identifying the most important parts of the original content without altering the wording.</p>
+        </div>
+
+        <div class="summary-section">
+            <h2>Abstractive Summarization</h2>
+            <p>Abstractive summarization is a natural language processing approach that generates a concise summary by rephrasing and synthesizing the main ideas from the original text. Unlike extractive summarization, which selects existing sentences, abstractive summarization creates new sentences that capture the essence of the content.</p>
+        </div>
+
+        <div class="summary-section">
+            <h2>Example to Showcase Abstractive and Extractive Summarization</h2>
+            <div class="example-box">
+                <h3>Sample Text (114 words)</h3>
+                <p>Our company has seen a 25% growth in customer engagement over the past quarter, primarily due to targeted email campaigns. Social media interactions increased by 30%, and our paid ad campaigns on Google have contributed to a 15% boost in website traffic. We’ve also expanded our product offerings, introducing a new line that has been well-received by customers. Customer satisfaction ratings have improved by 10%, and our retention rate has reached an all-time high of 85%. Additionally, partnerships with influencers have enhanced brand visibility and credibility. The next quarter will focus on further expanding our digital marketing strategies and optimizing user experience on mobile platforms. We expect continued growth as we implement these strategies.</p>
+            </div>
+
+            <h3>Extracted Summary (76 words)</h3>
+            <div class="summary-box">
+                <p>Our company has seen a 25% growth in customer engagement over the past quarter, primarily due to targeted email campaigns. Customer satisfaction ratings have improved by 10%, and our retention rate has reached an all-time high of 85%. Additionally, partnerships with influencers have enhanced brand visibility and credibility. The next quarter will focus on further expanding our digital marketing strategies and optimizing user experience on mobile platforms. We expect continued growth as we implement these strategies.</p>
+            </div>
+
+            <h3>Abstracted Summary (56 words)</h3>
+            <div class="summary-box">
+                <p>Our company has seen a 25% growth in customer engagement over the past quarter. Social media interactions increased by 30%, and our paid ad campaigns on Google have contributed to a 15% boost in website traffic. Customer satisfaction ratings have improved by 10%, and retention rate has reached an all-time high of 85%.</p>
+            </div>
+
+            <h3>Similarity Score</h3>
+            <p class="similarity-score">Similarity score for Extracted summary and Abstracted summary – 73.70%</p>
+        </div>
+    </div>
+</body>
+</html>
