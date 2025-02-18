@@ -1,5 +1,4 @@
-from flask import Flask, render_template
-from flask_socketio import SocketIO, emit
+from flask import Flask, render_template, request, jsonify
 from wordcloud import WordCloud
 import matplotlib
 matplotlib.use('Agg')
@@ -22,8 +21,11 @@ sentiment_model = pipeline(model="AshBunny/finetuning-sentiment-model-5000-sampl
 
 eventlet.monkey_patch()
 
+from flask_cors import CORS
+
 app = Flask(__name__)
-socketio = SocketIO(app, cors_allowed_origins="*")
+CORS(app)
+
 
 def generate_wordcloud(text):
     wordcloud = WordCloud(width=500, height=300, background_color='white').generate(text)
@@ -71,18 +73,25 @@ def generate_barchart(text):
     return f"data:image/png;base64,{img_base64}"
     
 
-@socketio.on('text_update')
-def handle_text_update(data):
-    """Generate a new word cloud and send it to the frontend when text updates."""
+@app.route('/text_update', methods=['POST'])
+def handle_text_update():
+    """Generate a new word cloud and return it as a JSON response."""
+    data = request.get_json()  # Ensure the request contains JSON data
     text = data.get("text", "")
+
     wordcloud_image = generate_wordcloud(text)
     sentiment = generate_sentiment(text)
     bar_image = generate_barchart(text)
-    emit('wordcloud_update', {"image": wordcloud_image, "image1": bar_image, "sentiment": sentiment}, broadcast=True)
+
+    return jsonify({
+        "image": wordcloud_image,
+        "image1": bar_image,
+        "sentiment": sentiment
+    })
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('./sentiment_analysis/sentiment_analysis.html')
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=True, host="0.0.0.0", port=5002)
